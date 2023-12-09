@@ -3,8 +3,11 @@ import axios from 'axios';
 import './App.css';
 import List from './Components/lists';
 import Navbar from './Components/Navigation';
+import Loader  from './Components/LoaderComp';
 
 function App() {
+
+  const [loading, setLoading] = useState(true);  
   const [groupValue, setgroupValue] = useState(getStateFromLocalStorage() || 'status');
   const [orderValue, setorderValue] = useState('title');
   const [ticketDetails, setticketDetails] = useState([]);
@@ -37,6 +40,8 @@ function App() {
       }));
       setticketDetails(ticketsWithUsers);
       orderDataByValue(ticketsWithUsers);
+      setTimeout(() => setLoading(false), 3000);
+
     }
   }, [orderDataByValue]);
 
@@ -83,20 +88,25 @@ function App() {
     ));
   };
 
+
   return (
-    <>
-      <Navbar
-        groupValue={groupValue}
-        orderValue={orderValue}
-        handleGroupValue={handleGroupValue}
-        handleOrderValue={handleOrderValue}
-      />
-      <section className="board-details">
-        <div className="board-details-list">
-          {renderList()}
-        </div>
-      </section>
-    </>
+    <div>
+      {loading ? <Loader /> : 
+      <>
+        <Navbar
+          groupValue={groupValue}
+          orderValue={orderValue}
+          handleGroupValue={handleGroupValue}
+          handleOrderValue={handleOrderValue}
+        />
+        <section className="board-details">
+          <div className="board-details-list">
+            {renderList()}
+          </div>
+        </section>
+      </>
+      }
+    </div>
   );
 }
 

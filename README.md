@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Taskboard - Interactive Task Board Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+Taskboard aims to provide a smooth and efficient task management experience. We appreciate your interest and contributions to making this application better!. It is designed to offer a dynamic and user-friendly interface for managing tasks and tickets. The application interacts seamlessly with an external API, providing a rich and responsive user experience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Dynamic Interaction with API**: Taskboard interacts with the provided API endpoint (https://api.quicksell.co/v1/internal/frontend-assignment) to fetch and display ticket information.
+- **Grouping Options**: Users can dynamically adjust the Kanban board by selecting different grouping options:
+    1. **By Status**: Tickets are grouped based on their current status, offering a clear view of the task progression.
+    2. **By User**: This option arranges the tickets according to the assigned user, making it easy to track individual responsibilities.
+    3. **By Priority**: Tickets are grouped based on their priority level, allowing users to focus on urgent tasks.
+- **Sorting Capabilities**: Provides two distinct ways for sorting tickets:
+    1. **Priority**: Tickets can be arranged in descending order of priority.
+    2. **Title**: Users can sort tickets in ascending order based on their title.
+- **Responsive Design**: The Kanban board is designed to be responsive and visually appealing, ensuring a consistent experience across various devices and screen sizes.
+- **Priority Levels**: The application recognizes the following priority levels for tickets:
+    - Urgent (Priority level 4)
+    - High (Priority level 3)
+    - Medium (Priority level 2)
+    - Low (Priority level 1)
+    - No priority (Priority level 0)
 
-### `npm start`
+## Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React JS**: For building the user interface.
+- **HTML/CSS**: For structuring and styling the application.
+- **JavaScript**: For application logic and API interaction.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation and Setup
 
-### `npm test`
+1. Clone the repository:
+    ```
+    git clone [repository URL]
+    ```
+2. Navigate to the project directory:
+    ```
+    cd taskboard
+    ```
+3. Install dependencies:
+    ```
+    npm install
+    ```
+4. Start the application:
+    ```
+    npm start
+    ```
+5. Open your browser and navigate to `localhost:3000` to view the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+- **Display Button**: Click the "display" button to load tickets from the API.
+- **Grouping Options**: Select the desired grouping option (Status, User, Priority) to adjust the board's layout.
+- **Sorting Options**: Choose either 'Priority' or 'Title' to sort the displayed tickets accordingly.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*(Include screenshots of your application here)*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*(This is a basic template for your README.md file. You might need to adjust it according to your project's specific details and requirements.)*

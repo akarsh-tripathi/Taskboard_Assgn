@@ -7,6 +7,15 @@ import List from './Components/lists';
 import Navbar from './Components/Navigation';
 
 function App() {
+  function handleGroupValue(value){
+    setgroupValue(value);
+    console.log(value);
+  }
+
+  function handleOrderValue(value){
+    setorderValue(value);
+    console.log(value);
+  }
   const statusList = ['In progress', 'Backlog', 'Todo', 'Done', 'Cancelled']
   const userList = ['Anoop sharma', 'Yogesh', 'Shankar Kumar', 'Ramesh', 'Suresh']
   const priorityList = [{name:'No priority', priority: 0}, {name:'Low', priority: 1}, {name:'Medium', priority: 2}, {name:'High', priority: 3}, {name:'Urgent', priority: 4}]
@@ -20,19 +29,9 @@ function App() {
     if (orderValue === 'priority') {
       cardsArry.sort((a, b) => b.priority - a.priority);
     } else if (orderValue === 'title') {
-      cardsArry.sort((a, b) => {
-        const titleA = a.title.toLowerCase();
-        const titleB = b.title.toLowerCase();
-
-        if (titleA < titleB) {
-          return -1;
-        } else if (titleA > titleB) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
+      cardsArry.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
     }
+    
     await setticketDetails(cardsArry);
   }, [orderValue, setticketDetails]);
 
@@ -74,15 +73,7 @@ function App() {
     
   }, [orderDataByValue, groupValue])
 
-  function handleGroupValue(value){
-    setgroupValue(value);
-    console.log(value);
-  }
-
-  function handleOrderValue(value){
-    setorderValue(value);
-    console.log(value);
-  }
+  
   
   return (
     <>

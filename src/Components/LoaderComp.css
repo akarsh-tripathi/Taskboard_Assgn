@@ -1,0 +1,25 @@
+.loader {
+    
+    position: fixed;  /* Make the loader position fixed */
+    color:white;
+    top: 0;
+    font-size: 2em;
+    left: 0;
+    width: 100vw;     
+    height: 100vh;    
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;    
+    opacity: 2;
+    
+    animation: 3s dissolve 2s forwards;
+  }
+  
+  @keyframes dissolve {
+    to {
+      opacity: 0;
+    }
+  }
+  

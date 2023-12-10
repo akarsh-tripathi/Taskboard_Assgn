@@ -1,11 +1,14 @@
-import React, { useEffect, useState, useCallback } from 'react';
+
 import axios from 'axios';
 import './App.css';
+import React, { useEffect, useState, useCallback } from 'react';
 import List from './Components/lists';
 import Navbar from './Components/Navigation';
+import Loader from './Components/LoaderComp';
 
 function App() {
-
+  
+  const [showLoader, setShowLoader] = useState(true);
   const [groupValue, setgroupValue] = useState(getStateFromLocalStorage() || 'status');
   const [orderValue, setorderValue] = useState('title');
   const [ticketDetails, setticketDetails] = useState([]);
@@ -29,6 +32,8 @@ function App() {
     }
     setticketDetails(sortedCards);
   }, [orderValue]);
+
+
   const fetchData = useCallback(async () => {
     const response = await axios.get('https://api.quicksell.co/v1/internal/frontend-assignment');
     if (response.status === 200) {
@@ -46,15 +51,22 @@ function App() {
     fetchData();
   }, [fetchData, groupValue]);
 
+  useEffect(()=>{
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  
   function handleGroupValue(value) {
     setgroupValue(value);
   }
 
+  
   function handleOrderValue(value) {
     setorderValue(value);
   }
-
-  
 
   function saveStateToLocalStorage(state) {
     localStorage.setItem('groupValue', JSON.stringify(state));
@@ -84,10 +96,10 @@ function App() {
     ));
   };
 
-
   return (
 
     <>
+      {showLoader && <Loader />}
       <Navbar
         groupValue={groupValue}
         orderValue={orderValue}

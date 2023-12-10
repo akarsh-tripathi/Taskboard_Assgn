@@ -26,11 +26,11 @@ export default function Card(property) {
             <div className="card-tag">
                 {
                     {
-                        0: <div className="card-tag-icon"><image src={Tag0}/></div>,
-                        1: <div className="card-tag-icon"><image src={Tag1}/></div>,
-                        2: <div className="card-tag-icon"><image src={Tag2}/></div>,
-                        3: <div className="card-tag-icon"><image src={Tag3}/></div>,
-                        4: <div className="card-tag-icon"><image src={Tag4}/></div>,
+                        0: <div className="card-tag-icon"><img src={Tag0}/></div>,
+                        1: <div className="card-tag-icon"><img src={Tag1}/></div>,
+                        2: <div className="card-tag-icon"><img src={Tag2}/></div>,
+                        3: <div className="card-tag-icon"><img src={Tag3}/></div>,
+                        4: <div className="card-tag-icon"><img src={Tag4}/></div>,
                        
                     }[property.cardDetails.priority]
                 }
